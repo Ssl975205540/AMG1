@@ -1,0 +1,85 @@
+package lanou.amg1.discoverfragment.recyclerviewnavigation;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import lanou.amg1.R;
+import lanou.amg1.discoverfragment.discovermain.DiscoverBean;
+
+
+/**
+ * Created by dllo on 16/9/23.
+ */
+public class RecyclerViewNavigationAdapter extends RecyclerView.Adapter<RecyclerViewNavigationAdapter.ViewHoler>{
+
+
+    private Context context;
+
+    private DiscoverBean bean;
+    private int i;
+
+    public void setBean(DiscoverBean bean,int i) {
+        this.bean = bean;
+        this.i = i;
+    }
+
+    public RecyclerViewNavigationAdapter(Context context) {
+        this.context = context;
+
+    }
+
+    @Override
+    public RecyclerViewNavigationAdapter.ViewHoler onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        View view = LayoutInflater.from(context).inflate(R.layout.recyclerviewnavigationadapter_item,null);
+
+        ViewHoler viewHoler = new ViewHoler(view);
+
+
+
+        return viewHoler;
+    }
+
+
+    @Override
+    public void onBindViewHolder(RecyclerViewNavigationAdapter.ViewHoler holder, int position) {
+
+        Picasso.with(context).load( bean.getResult().getCardlist().get(i).getData().get(position).getImageurl()).into(holder.recycler_Navigation_Item_ImageView);
+
+
+        holder.recycler_Navigation_Item_TextView_Title.setText(bean.getResult().getCardlist().get(i).getData().get(position).getTitle());
+
+
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return bean.getResult().getCardlist().get(i).getData().size();
+    }
+
+    public class ViewHoler extends RecyclerView.ViewHolder {
+
+        private  ImageView recycler_Navigation_Item_ImageView;
+        private  TextView recycler_Navigation_Item_TextView_Title;
+
+        public ViewHoler(View itemView) {
+            super(itemView);
+
+            recycler_Navigation_Item_ImageView = (ImageView)itemView.findViewById(R.id.recycler_Navigation_Item_ImageView);
+
+            recycler_Navigation_Item_TextView_Title = (TextView)itemView.findViewById(R.id.recycler_Navigation_Item_TextView_Title);
+
+
+        }
+    }
+}

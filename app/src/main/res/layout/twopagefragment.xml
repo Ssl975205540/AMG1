@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/my_TwoPageImageView"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/forum_my_n"
+
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/car_TwoPageImageView"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/forum_cars_n"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/dq_TwoPageImageView"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/forum_area_n"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/zt_TwoPageImageView"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/forum_theme_n"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:text="我的"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:text="车系"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:text="地区"
+            android:gravity="center_horizontal"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="主题"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

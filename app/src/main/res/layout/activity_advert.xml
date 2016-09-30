@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lanou.amg1.advert.AdvertActivity">
+
+    <ImageView
+        android:id="@+id/AdvertActivity_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <TextView
+        android:id="@+id/AdvertActivity_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#111111"
+        android:textSize="40dp"
+        android:text="跳过 3秒"
+        />
+
+
+</RelativeLayout>

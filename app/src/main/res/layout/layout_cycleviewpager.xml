@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/foot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <lanou.amg1.discoverfragment.focusmap.BaseViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:background="#33000000">
+        <TextView
+            android:id="@+id/title_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_marginTop="3dp"/>
+        <LinearLayout
+            android:id="@+id/dot_indicator"
+            android:layout_below="@+id/title_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"/>
+    </RelativeLayout>
+</RelativeLayout>

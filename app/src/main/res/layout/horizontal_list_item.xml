@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/shapelinearlayout"
+    android:layout_width="130dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="130dp">
+
+
+    <ImageView
+
+        android:id="@+id/horizontal_List_Item_ImageView"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        />
+
+
+</LinearLayout>

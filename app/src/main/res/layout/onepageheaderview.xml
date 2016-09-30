@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="#F0EFF4"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="精品推荐"
+        android:textSize="15dp"
+        android:textColor="@android:color/black"
+        android:layout_margin="10dp"
+        />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:id="@+id/onePageHeader_all"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部"
+                android:layout_marginRight="40dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ahlib_arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        >
+
+
+    <TextView
+        android:id="@+id/onePageHeader1"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+
+        android:gravity="center"
+        android:textColor="#6698FB"
+        android:text="媳妇当车模"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/blueshape"
+        />
+    <TextView
+        android:id="@+id/onePageHeader2"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+        android:background="@drawable/blueshape"
+        android:gravity="center"
+        android:textColor="#6698FB"
+        android:layout_marginLeft="20dp"
+        android:text="@string/mr"
+
+
+        />
+    <TextView
+        android:id="@+id/onePageHeader3"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+        android:background="@drawable/blueshape"
+        android:gravity="center"
+        android:textColor="#6698FB"
+        android:layout_marginLeft="20dp"
+        android:text="高端阵地"
+
+
+
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/onePageHeader4"
+
+        android:layout_marginLeft="10dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+        android:background="@drawable/blueshape"
+        android:gravity="center"
+        android:textColor="#6698FB"
+        android:text="摩友天地"
+        />
+    <TextView
+        android:id="@+id/onePageHeader5"
+        android:layout_marginLeft="10dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+        android:gravity="center"
+        android:background="@drawable/blueshape"
+        android:textColor="#6698FB"
+        android:text="精挑细选"
+        />
+    <TextView
+        android:id="@+id/onePageHeader6"
+        android:layout_marginLeft="10dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textSize="13dp"
+        android:background="@drawable/blueshape"
+
+        android:gravity="center"
+        android:textColor="#6698FB"
+        android:text="妹子选车"
+        />
+
+        <TextView
+            android:id="@+id/onePageHeader7"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/blueshape"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="13dp"
+            android:gravity="center"
+            android:textColor="#6698FB"
+
+
+            android:text="论坛红人馆"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/onePageHeaderRelativelayout"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/relativelayoutselector"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/huo"
+            android:layout_margin="10dp"
+
+            />
+
+        <TextView
+            android:layout_toRightOf="@+id/im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24小时热帖"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ahlib_arrow_right"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

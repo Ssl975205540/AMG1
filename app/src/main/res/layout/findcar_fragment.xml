@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/czxc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/findCarFragment_TabLayout"
+        android:layout_width="150dp"
+        android:layout_centerHorizontal="true"
+
+        android:background="@android:color/white"
+        app:tabIndicatorColor="@android:color/black"
+        android:layout_height="45dp">
+
+
+    </android.support.design.widget.TabLayout>
+
+
+
+
+
+    <ImageView
+        android:id="@+id/findCarFragment_Js_ImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="60dp"
+      android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/findcarright"
+        />
+
+    <ImageView
+        android:id="@+id/findCarFragment_Vs_ImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/findcarright_s"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        />
+
+<TextView
+    android:id="@+id/findCarFragment_Bj_TextView"
+    android:layout_width="wrap_content"
+    android:text="北京"
+    android:layout_centerVertical="true"
+    android:layout_alignParentRight="true"
+    android:textSize="16dp"
+    android:visibility="invisible"
+    android:textColor="#437FFA"
+    android:layout_marginRight="24dp"
+    android:layout_height="wrap_content" />
+</RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/findCarFragment_ViewPager"
+        android:layout_below="@+id/czxc"
+        android:layout_width="match_parent"
+        android:background="#F0EFF5"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+</RelativeLayout>

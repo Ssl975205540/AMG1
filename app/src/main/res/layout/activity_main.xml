@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+
+    <FrameLayout
+
+        android:id="@+id/frameLayout_MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        >
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/activity_main_LinearLayout"
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/nav_icon_article"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/nav_icon_article_f"
+            android:layout_height="match_parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/nav_icon_forum"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="match_parent"
+            android:src="@mipmap/nav_icon_forum_f"
+            />
+
+        <ImageView
+            android:id="@+id/nav_icon_findcar"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/nav_icon_findcar_f"
+
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/nav_icon_sale"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:src="@mipmap/nav_icon_sale_f"
+            android:layout_height="match_parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/nav_icon_my"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="match_parent"
+            android:src="@mipmap/nav_icon_my_f"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/activity_main_LinearLayout_All"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:clickable="false"
+        android:visibility="invisible"
+        android:background="#a9060606"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+
+</RelativeLayout>

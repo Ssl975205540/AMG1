@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <!--轮播图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+       >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/discoverHeader_Advertisement_ViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+        </android.support.v4.view.ViewPager>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+
+            android:layout_alignBottom="@+id/discoverHeader_Advertisement_ViewPager"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_bannertext"
+                android:layout_gravity="center_horizontal"
+
+                android:textColor="@android:color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/points"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <!--广告-->
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/discoverHeader_Advertisement_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/recyclerViewDiscoverHeaderNavigation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+  </android.support.v7.widget.RecyclerView>
+
+
+
+<LinearLayout
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/shapelinearlayout"
+    android:layout_height="40dp">
+
+    <TextView
+        android:layout_marginLeft="30dp"
+      android:layout_gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务专区"
+        />
+
+</LinearLayout>
+
+    <!--第二个RecyclerView-->
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewDiscoverHeader_Sector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+    <!--广告-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <!--限时抢购-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shapelinearlayout"
+        android:layout_height="180dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/shapelinearlayout"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="限时抢购"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+        <lanou.amg1.discoverfragment.horizontallistview.HorizontalListView
+            android:id="@+id/discoverHorizontalListView"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp">
+        </lanou.amg1.discoverfragment.horizontallistview.HorizontalListView>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shapelinearlayout"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="40dp">
+
+            <TextView
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="活动专区"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="更多活动"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ahlib_arrow_right"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ahlib_arrow_right"
+                android:layout_width="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ahlib_arrow_right"
+
+                android:layout_height="10dp" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/activity_Zone_First_ImageView"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:scaleType="fitXY"
+                android:layout_height="135dp"
+                 />
+            <ImageView
+                android:id="@+id/activity_Zone_Second_ImageView"
+                android:layout_width="0dp"
+                android:scaleType="fitXY"
+                android:layout_height="135dp"
+                android:layout_weight="3"
+           />
+            <ImageView
+                android:id="@+id/activity_Zone_Third_ImageView"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:scaleType="fitXY"
+                android:layout_height="135dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/Singleframe_Button_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shapelinearlayout"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="猜你喜欢"
+
+            android:layout_marginLeft="30dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/discoverHeadler_Lovely_RecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+</android.support.v7.widget.RecyclerView>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shapelinearlayout"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="为我推荐"
+            android:layout_marginLeft="30dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/discoverHeadler_ForMe_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="商品列表"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

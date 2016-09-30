@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleIndicator">
+        <attr name="ci_radius" format="dimension" />
+        <attr name="ci_margin" format="dimension" />
+        <attr name="ci_background" format="color|integer" />
+        <attr name="ci_selected_background" format="color|integer" />
+        <attr name="ci_gravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="ci_mode">
+            <enum name="inside" value="0" />
+            <enum name="outside" value="1" />
+            <enum name="solo" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="BannerImageViewPager">
+        <attr name="dotsBgAlpha" format="float" />
+        <attr name="dotsBlurImage" format="reference" />
+        <attr name="dotsFocusImage" format="reference" />
+        <attr name="dotsSpacing" format="dimension" />
+        <attr name="dotsViewHeight" format="dimension" />
+        <attr name="dotsBackground" format="reference|color" />
+        <attr name="autoChange" format="boolean" />
+        <attr name="changeInterval" format="integer" />
+        <attr name="android:scaleType" />
+        <attr name="android:gravity" />
+        <attr name="android:adjustViewBounds" />
+    </declare-styleable>
+
+</resources>

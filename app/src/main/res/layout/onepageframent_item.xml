@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+
+    android:background="@drawable/relativelayoutselector"
+    >
+
+    <TextView
+        android:id="@+id/onePageTextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="15dp"
+        android:textColor="@android:color/black"
+        android:layout_toLeftOf="@+id/onePageImageView"
+
+        />
+
+    <TextView
+        android:id="@+id/onePageTextViewTitleBelow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/onePageTextViewTitle"
+        android:textSize="10dp"
+
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/onePageImageView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        />
+    <TextView
+        android:layout_below="@+id/onePageImageView"
+        android:id="@+id/onePageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="10dp"
+       android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+
+        />
+
+
+
+
+</RelativeLayout>
