@@ -3,8 +3,9 @@
     android:orientation="vertical"
     android:background="@drawable/shapelinearlayout"
     android:layout_width="130dp"
+    android:padding="10dp"
     android:layout_marginRight="10dp"
-    android:layout_height="130dp">
+    android:layout_height="140dp">
 
 
     <ImageView
@@ -12,6 +13,7 @@
         android:id="@+id/horizontal_List_Item_ImageView"
         android:layout_width="130dp"
         android:layout_height="130dp"
+        android:layout_marginBottom="10dp"
         />
 
 

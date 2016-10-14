@@ -1,28 +1,21 @@
 package lanou.amg1.recommendfragment;
 
-import android.os.Message;
+import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.squareup.picasso.Picasso;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import lanou.amg1.R;
 import lanou.amg1.basefragment.Base_Fragment;
-import lanou.amg1.gsonrequest.GsonRequest;
-import lanou.amg1.gsonrequest.VolleySingleton;
-import lanou.amg1.viewpageradpter.ImageAdapter;
+import lanou.amg1.main.SendEvent;
+import lanou.amg1.search.SearchActivity;
 
 /**
  * Created by dllo on 16/9/19.
@@ -30,156 +23,48 @@ import lanou.amg1.viewpageradpter.ImageAdapter;
 public class RecommendFragment extends Base_Fragment {
 
 
-    public ImageFragmentHandler handler = new ImageFragmentHandler(new WeakReference<RecommendFragment>(this));
-    public ViewPager recommendViewPager;
-
-    private RecommendlistViewAdapter _FragmentRecommendlistViewAdapter;
-    private LinearLayoutManager linearLayoutManager;
-
-    private String url = "http://app.api.autohome.com.cn/autov4.8.8/news/newslist-pm1-c0-nt0-p1-s30-l0.json";
-    //    private RecyclerView recyclerView_Recommend_Fragment;
-    private RecommendRecyclerViewAdapter adapter_recyclerViewRecommendFragment;
-    private PullToRefreshListView listView_Recommend_Fragment;
-
-    private CircleIndicator1 recommendViewPagerCircleIndicator;
-
-
-    private RecommendlistViewAdapter adapter_listView_recommend_fragment;
     private FragmentRecommendBean bean;
-    private LinearLayout line1;
-    private ImageView imageasdcas;
+    private ImageView audio_recommend_ImageView;
+    private TabLayout recommend_Tab;
+    private ViewPager recommend_ViewPager;
+    private ImageView recommend_fragment_search;
+    private ImageView recommend_More;
+
+    public RecommendFragment() {
+
+
+
+    }
 
     @Override
     protected void networkRequest() {
 
 
-//
-        GsonRequest<FragmentRecommendBean> gsonRequest = new GsonRequest<FragmentRecommendBean>(url, FragmentRecommendBean.class, new Response.Listener<FragmentRecommendBean>() {
-            @Override
-            public void onResponse(FragmentRecommendBean bean) {
+        ArrayList<Fragment> arrayList = new ArrayList<>();
 
-                adapter_listView_recommend_fragment = new RecommendlistViewAdapter(getContext());
-
-                adapter_listView_recommend_fragment.setBean(bean);
-
-                listView_Recommend_Fragment.setAdapter(adapter_listView_recommend_fragment);
-
-
-                View view1 = LayoutInflater.from(context).inflate(R.layout.headerview_listview_recommend_fragment, null);
-                listView_Recommend_Fragment.getRefreshableView().addHeaderView(view1);
-                recommendViewPagerCircleIndicator = (CircleIndicator1) view1.findViewById(R.id.recommendViewPagerCircleIndicator);
-                recommendViewPager = (ViewPager) view1.findViewById(R.id.recommendViewPager);
-
-                ArrayList<ImageView> a = new ArrayList<>();
-                for (int i = 0; i < bean.getResult().getFocusimg().size(); i++) {
-                    ImageView ima = new ImageView(context);
-                    Picasso.with(context).load(bean.getResult().getFocusimg().get(i).getImgurl()).into(ima);
-                    a.add(ima);
-
-                }
-
-                ImageAdapter imageAdapter = new ImageAdapter(a);
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
+        arrayList.add(new OneRecommendFragment());
 
 
-                recommendViewPager.setAdapter(imageAdapter);
+        RecommendAdapter recommendAdapter = new RecommendAdapter(getChildFragmentManager());
+        recommendAdapter.setArrayList(arrayList);
 
+        recommend_ViewPager.setAdapter(recommendAdapter);
 
-                //开始轮播效果
+        recommend_Tab.setupWithViewPager(recommend_ViewPager);
 
-
-                recommendViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-
-                    //配合Adapter的currentItem字段进行设置。
-
-                    @Override
-
-                    public void onPageSelected(int arg0) {
-
-                        handler.sendMessage(Message.obtain(handler, ImageFragmentHandler.MSG_PAGE_CHANGED, arg0, 0));
-
-
-                        Log.d("1", arg0 + "");
-                    }
-
-
-                    @Override
-
-                    public void onPageScrolled(int arg0, float arg1, int arg2) {
-                        Log.d("2", "1");
-                    }
-
-
-                    //覆写该方法实现轮播效果的暂停和恢复
-
-                    @Override
-
-                    public void onPageScrollStateChanged(int arg0) {
-
-                        switch (arg0) {
-
-                            case ViewPager.SCROLL_STATE_DRAGGING:
-//                        handler.sendEmptyMessage(ImageFragmentHandler.MSG_KEEP_SILENT);
-
-                                Log.d("3", "1");
-                                break;
-
-                            case ViewPager.SCROLL_STATE_IDLE:
-
-//                                handler.sendEmptyMessageDelayed(ImageFragmentHandler.MSG_UPDATE_IMAGE, ImageFragmentHandler.MSG_DELAY);
-
-
-                                handler.sendEmptyMessageDelayed(ImageFragmentHandler.MSG_UPDATE_IMAGE, ImageFragmentHandler.MSG_DELAY);
-                                Log.d("4", arg0 + "");
-                                break;
-
-                            default:
-
-                                break;
-                        }
-                    }
-                });
-
-
-                recommendViewPagerCircleIndicator.setViewPager(recommendViewPager, a);
-
-
-                handler.sendEmptyMessageDelayed(ImageFragmentHandler.MSG_UPDATE_IMAGE, ImageFragmentHandler.MSG_DELAY);
-
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-
-
-        VolleySingleton.getInstance().addRequest(gsonRequest);
-
-        listView_Recommend_Fragment.setOnScrollListener(new AbsListView.OnScrollListener() {
-
-
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-                Log.d("RecommendFragment", "firstVisibleItem:" + firstVisibleItem);
-//                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) imageasdcas.getLayoutParams();
-//
-//                layoutParams.setMargins(-100,20,20,20);
-//
-//                imageasdcas.setLayoutParams(layoutParams);
-
-
-            }
-        });
+        recommend_Tab.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 
 
@@ -187,20 +72,87 @@ public class RecommendFragment extends Base_Fragment {
     }
 
     @Override
-    protected View setLayout(LayoutInflater inflater) {
-        View view = inflater.inflate(R.layout.recommend_fragment, null);
-        return view;
+    protected int setLayout() {
+
+        return R.layout.recommend_fragment;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+
+    }
+
+
+    @Subscribe
+
+    public void setSendEvent(SendEvent sendEvent){
+
+
+      ArrayList<String>  arrayList1 = new ArrayList<>();
+        arrayList1.add("推荐");
+        arrayList1.add("优创+");
+        arrayList1.add("说客");
+        arrayList1.add("视频");
+        arrayList1.add("快报");
+        arrayList1.add("行情");
+        arrayList1.add("新闻");
+        arrayList1.add("评测");
+        arrayList1.add("导购");
+        arrayList1.add("用车");
+        arrayList1.add("技术");
+        arrayList1.add("文化");
+        arrayList1.add("改装");
+
+
+        for (int i = 0; i < arrayList1.size(); i++) {
+
+            if(sendEvent.getContent().equals(arrayList1.get(i))){
+                recommend_ViewPager.setCurrentItem(i);
+        }
+
+
+        }
+
+
+
+
+
     }
 
     @Override
     protected void control() {
 
-        listView_Recommend_Fragment = findById(R.id.listView_Recommend_Fragment);
-        imageasdcas = findById(R.id.imageasdcas);
-        line1 = findById(R.id.line1);
-        Log.d("RecommendFragment", "1");
+        EventBus.getDefault().register(this);
+        recommend_ViewPager = findById(R.id.recommend_ViewPager);
+        recommend_Tab = findById(R.id.recommend_Tab);
+        recommend_More = findById(R.id.recommend_More);
+
+        audio_recommend_ImageView = findById(R.id.audio_recommend_ImageView);
+        recommend_fragment_search = findById(R.id.recommend_fragment_search);
+        recommend_fragment_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                intent.putExtra("search","搜索关键字");
+                startActivity(intent);
 
 
+            }
+        });
+        recommend_More.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(getActivity(),RecommendMoreActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
     }
 
 

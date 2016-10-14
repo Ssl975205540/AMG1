@@ -1,8 +1,7 @@
 package lanou.amg1.discoverfragment.discovermain;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.SystemClock;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.squareup.picasso.Picasso;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +26,17 @@ import java.util.List;
 import lanou.amg1.R;
 import lanou.amg1.basefragment.Base_Fragment;
 import lanou.amg1.discoverfragment.discoverheadler_forme_recyclerview.ForMe_RecyclerView;
-import lanou.amg1.discoverfragment.focusmap.BannerAdapter;
 import lanou.amg1.discoverfragment.horizontallistview.HorizontalListView;
 import lanou.amg1.discoverfragment.horizontallistview.HorizontalListViewAdapter;
+import lanou.amg1.discoverfragment.horizontallistview.LimitedBuyTextView;
 import lanou.amg1.discoverfragment.lovely.LoveLyRecyclerView;
+import lanou.amg1.discoverfragment.recyclerviewnavigation.OnRecyclerltemClickListener;
 import lanou.amg1.discoverfragment.recyclerviewnavigation.RecyclerViewNavigationAdapter;
 import lanou.amg1.discoverfragment.recyclerviewsector.RecyclerViewServerAdapter;
+import lanou.amg1.forumfragment.page.onepagefirst.OnePageFirstActivity;
 import lanou.amg1.gsonrequest.GsonRequest;
 import lanou.amg1.gsonrequest.VolleySingleton;
+import lanou.amg1.search.SearchActivity;
 import lanou.amg1.urlall.URLAll;
 
 
@@ -54,56 +58,27 @@ public class DiscoverFragment extends Base_Fragment {
     private RecyclerView discoverHeadler_ForMe_RecyclerView;
     private View view;
     private SharedPreferences.Editor casc;
-    private ViewPager discoverHeader_Advertisement_ViewPager;
+    private Banner discoverHeader_Advertisement_ViewPager;
 
     private static DiscoverBean bean;
-    private List<ImageView> mList;
+    private List<String> mList;
     private TextView mTextView;
     private LinearLayout mLinearLayout;
     //广告图素材
 
 
-    //广告语
-    private String[] bannerTexts = {
-            "ssssss", "aaaaaaaa", "wwwwwwwww", "awwwweeeeeee"
-    };
-    // ViewPager适配器与监听器
-    private BannerAdapter mAdapter;
-    private BannerListener bannerListener;
-
-    // 圆圈标志位
-    private int pointIndex = 0;
     // 线程标志
     private boolean isStop = false;
     private Boolean mm = true;
-
+    private RelativeLayout disHeader_RelativeLayout;
+    private ImageView discover_fragment_search;
 
 
     @Override
     protected void networkRequest() {
 
         this.access();
-        new Thread(new Runnable() {
 
-            @Override
-            public void run() {
-                while (!isStop) {
-                    SystemClock.sleep(2000);
-                 try {
-                     getActivity().runOnUiThread(new Runnable() {
-
-                         @Override
-                         public void run() {
-                             discoverHeader_Advertisement_ViewPager.setCurrentItem(discoverHeader_Advertisement_ViewPager.getCurrentItem() + 1);
-                         }
-                     });
-                 }catch (NullPointerException e){
-
-                 }
-
-                }
-            }
-        }).start();
 
         listView_DiscoverFragment.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
@@ -178,10 +153,11 @@ public class DiscoverFragment extends Base_Fragment {
     }
 
     @Override
-    protected View setLayout(LayoutInflater inflater) {
+    protected int setLayout() {
 
-        return inflater.inflate(R.layout.discover_fragment, null);
+        return R.layout.discover_fragment;
     }
+
 
     @Override
     protected void control() {
@@ -191,23 +167,31 @@ public class DiscoverFragment extends Base_Fragment {
 
         view = LayoutInflater.from(getActivity()).inflate(R.layout.discoverfragment_header, null);
 
-        mTextView = (TextView) findById(R.id.tv_bannertext, view);
-        mLinearLayout = (LinearLayout) findById(R.id.points, view);
 
+        disHeader_RelativeLayout = findById(R.id.disHeader_RelativeLayout, view);
+
+        discover_fragment_search = findById(R.id.discover_fragment_search);
+        discover_fragment_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                intent.putExtra("search", "搜索车商城");
+                startActivity(intent);
+
+
+            }
+        });
         discoverHeader_Advertisement_ViewPager = findById(R.id.discoverHeader_Advertisement_ViewPager, view);
         Singleframe_Button_ImageView = findById(R.id.Singleframe_Button_ImageView, view);
         activity_Zone_First_ImageView = findById(R.id.activity_Zone_First_ImageView, view);
         activity_Zone_Second_ImageView = findById(R.id.activity_Zone_Second_ImageView, view);
         activity_Zone_Third_ImageView = findById(R.id.activity_Zone_Third_ImageView, view);
         discoverHeader_Advertisement_ImageView = findById(R.id.discoverHeader_Advertisement_ImageView, view);
-
         listView_DiscoverFragment = findById(R.id.listView_DiscoverFragment);
-
         discoverHeadler_ForMe_RecyclerView = findById(R.id.discoverHeadler_ForMe_RecyclerView, view);
         recyclerViewDiscoverHeader_Sector = findById(R.id.recyclerViewDiscoverHeader_Sector, view);
-
         discoverHeadler_Lovely_RecyclerView = findById(R.id.discoverHeadler_Lovely_RecyclerView, view);
-
         discoverHorizontalListView = findById(R.id.discoverHorizontalListView, view);
         recyclerViewDiscoverHeaderNavigation = findById(R.id.recyclerViewDiscoverHeaderNavigation, view);
 
@@ -219,11 +203,10 @@ public class DiscoverFragment extends Base_Fragment {
     private void access() {
 
 
-
-
         GsonRequest<DiscoverBean> gsonRequest = new GsonRequest<DiscoverBean>(URLAll.DISCOVERY_PAGE, DiscoverBean.class, new Response.Listener<DiscoverBean>() {
 
 
+            private Boolean judge = false;
             private ArrayList<ImageView> arrayList;
             View view;
             LinearLayout.LayoutParams params;
@@ -233,40 +216,22 @@ public class DiscoverFragment extends Base_Fragment {
                 mList = new ArrayList<>();
                 DiscoverFragment.bean = bean;
                 for (int i = 0; i < bean.getResult().getCardlist().get(0).getData().size(); i++) {
-                    // 设置广告图
-                    ImageView imageView = new ImageView(context);
-                    imageView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.MATCH_PARENT));
-                    Picasso.with(context).load(bean.getResult().getCardlist().get(0).getData().get(i).getImageurl()).into(imageView);
 
-                    mList.add(imageView);
-                    view = new View(context);
-                    params = new LinearLayout.LayoutParams(10, 5);
-                    params.leftMargin = 10;
-                    view.setBackgroundResource(R.drawable.shapebackground);
-                    view.setLayoutParams(params);
-                    view.setEnabled(false);
-                    mLinearLayout.addView(view);
+                    mList.add(bean.getResult().getCardlist().get(0).getData().get(i).getImageurl());
+
+
                 }
-                mAdapter = new BannerAdapter(mList);
+                discoverHeader_Advertisement_ViewPager.setImages(mList);
 
-                discoverHeader_Advertisement_ViewPager.setAdapter(mAdapter);
 
-                bannerListener = new BannerListener();
-                discoverHeader_Advertisement_ViewPager.setOnPageChangeListener((ViewPager.OnPageChangeListener) bannerListener);
-                //取中间数来作为起始位置
-                int index = (Integer.MAX_VALUE / 2) - (Integer.MAX_VALUE / 2 % mList.size());
-                //用来出发监听器
-                discoverHeader_Advertisement_ViewPager.setCurrentItem(index);
-                mLinearLayout.getChildAt(pointIndex).setEnabled(true);
-
+                ArrayList<String> arrayList = new ArrayList<>();
 
                 for (int i = 0; i < bean.getResult().getCardlist().size(); i++) {
 
-
+                    arrayList.add(bean.getResult().getCardlist().get(i).getDescription());
                     if (bean.getResult().getCardlist().get(i).getDescription().equals("单帧大号横栏")) {
 
-                        Log.d("DiscoverFragment", "fcacac");
+
                         Picasso.with(context).load(bean.getResult().getCardlist().get(i).getData().get(0).getImageurl()).into(discoverHeader_Advertisement_ImageView);
 
                     }
@@ -317,6 +282,20 @@ public class DiscoverFragment extends Base_Fragment {
                         HorizontalListViewAdapter horizontalListViewAdapter = new HorizontalListViewAdapter(getContext());
                         horizontalListViewAdapter.setBean(bean, i);
                         discoverHorizontalListView.setAdapter(horizontalListViewAdapter);
+
+                        LimitedBuyTextView limitedBuyTextView = new LimitedBuyTextView(context, bean.getResult().getCardlist().get(i).getRightbtn().getData());
+
+                        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                        lp.addRule(RelativeLayout.CENTER_IN_PARENT);//与父容器的右侧对齐
+                        lp.rightMargin=10;
+                        View view = limitedBuyTextView.initTime();
+                        view.setLayoutParams(lp);
+                        disHeader_RelativeLayout.addView(view);
+
+
                     }
 
 
@@ -334,6 +313,53 @@ public class DiscoverFragment extends Base_Fragment {
                         recyclerViewNavigationAdapter.setBean(bean, i);
                         recyclerViewDiscoverHeaderNavigation.setAdapter(recyclerViewNavigationAdapter);
                         recyclerViewDiscoverHeaderNavigation.setLayoutManager(new GridLayoutManager(getContext(), 5));
+
+                        recyclerViewNavigationAdapter.setOnRecyclerltemClickListener(new OnRecyclerltemClickListener() {
+                            @Override
+                            public void click(int postion, RecyclerViewNavigationAdapter.ViewHoler holder) {
+
+
+                                switch (postion) {
+
+
+                                    case URLAll.ONE:
+                                        Intent intentOne = new Intent(getActivity(), OnePageFirstActivity.class);
+                                        intentOne.putExtra("title", "车商城");
+                                        intentOne.putExtra("OnePageFragmentBean", URLAll.DISCOVER_CAR_MALL);
+                                        intentOne.putExtra("layout", 5);
+                                        context.startActivity(intentOne);
+                                        break;
+
+                                    case URLAll.TWO:
+                                        Intent intentTwo = new Intent(getActivity(), OnePageFirstActivity.class);
+                                        intentTwo.putExtra("title", "分期购车");
+                                        intentTwo.putExtra("OnePageFragmentBean", URLAll.DISCOVER_HIRE_CAR);
+                                        intentTwo.putExtra("layout", 5);
+                                        context.startActivity(intentTwo);
+                                        break;
+                                    case URLAll.THREE:
+                                        Intent intentThree = new Intent(getActivity(), OnePageFirstActivity.class);
+                                        intentThree.putExtra("title", "养车之家");
+                                        intentThree.putExtra("OnePageFragmentBean", URLAll.DISCOVER_SUBSIDY_HOME);
+                                        intentThree.putExtra("layout", 5);
+                                        context.startActivity(intentThree);
+                                        break;
+                                    case URLAll.FOUR:
+                                        Intent intentFour = new Intent(getActivity(), OnePageFirstActivity.class);
+                                        intentFour.putExtra("title", "找二手车");
+                                        intentFour.putExtra("OnePageFragmentBean", URLAll.DISCOVER_FIND_CAR);
+                                        intentFour.putExtra("layout", 5);
+                                        context.startActivity(intentFour);
+                                        break;
+
+
+                                }
+
+
+                            }
+                        });
+
+
                     }
                     Log.d("DiscoverFragment", bean.getResult().getCardlist().get(i).getDescription());
 
@@ -350,6 +376,24 @@ public class DiscoverFragment extends Base_Fragment {
 
                 }
 
+                for (int i = 0; i < arrayList.size(); i++) {
+
+                    if (arrayList.get(i).equals("限时抢购")) {
+                        judge = true;
+                    }
+
+                }
+                if (judge == false) {
+
+                    disHeader_RelativeLayout.setVisibility(View.GONE);
+                    discoverHorizontalListView.setVisibility(View.GONE);
+
+                } else {
+                    disHeader_RelativeLayout.setVisibility(View.VISIBLE);
+                    discoverHorizontalListView.setVisibility(View.VISIBLE);
+
+                }
+
 
             }
         }, new Response.ErrorListener() {
@@ -363,33 +407,8 @@ public class DiscoverFragment extends Base_Fragment {
     }
 
 
-
-    class BannerListener implements ViewPager.OnPageChangeListener {
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            int newPosition = position % DiscoverFragment.bean.getResult().getCardlist().get(0).getData().size();
-//            mTextView.setText(bannerTexts[newPosition]);
-            mLinearLayout.getChildAt(newPosition).setEnabled(true);
-            mLinearLayout.getChildAt(pointIndex).setEnabled(false);
-            // 更新标志位
-            pointIndex = newPosition;
-
-        }
-
-    }
-
     @Override
     public void onDestroy() {
-        isStop = true;
         super.onDestroy();
 
     }

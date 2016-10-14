@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".main.MainActivity">
 <LinearLayout
@@ -25,7 +26,8 @@
 
     <LinearLayout
         android:id="@+id/activity_main_LinearLayout"
-        android:layout_weight="0.1"
+        android:layout_weight="0.08"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="0dp"
@@ -93,6 +95,102 @@
         android:layout_height="match_parent">
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:clickable="true"
+        android:background="#a9060606"
+        android:id="@+id/guidepageone_linearlayout"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击这里就可以进去全部频道了~"
+                android:layout_marginTop="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                />
+
+            <lanou.amg1.guidepage.RoundImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                imagecontrol:border_outside_color="@android:color/white"
+                android:src="@mipmap/tb_two"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+
+                />
 
 
+            <Button
+                android:id="@+id/btn_GuidePageActivity_Fragment_One"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="下一步"
+                android:layout_marginBottom="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@android:color/white"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/guidepagetwo_linearlayout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:background="#a9060606"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电台搬到这里了~"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                />
+
+            <lanou.amg1.guidepage.RoundImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                imagecontrol:border_outside_color="@android:color/white"
+                android:src="@mipmap/tb_one"
+                />
+
+
+            <Button
+                android:id="@+id/btn_GuidePageActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="下一步"
+                android:layout_marginBottom="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@android:color/white"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </RelativeLayout>

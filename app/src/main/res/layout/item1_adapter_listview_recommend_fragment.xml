@@ -5,16 +5,16 @@
 
 
     <ImageView
-        android:id="@+id/imageView_item1_adapter_listview_recommend_fragment"
+        android:id="@+id/one_Recommend_Fragment_Item_imageView0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
-        android:id="@+id/imageView_item2_adapter_listview_recommend_fragment"
+        android:id="@+id/one_Recommend_Fragment_Item_imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/imageView_item3_adapter_listview_recommend_fragment"
+        android:id="@+id/one_Recommend_Fragment_Item_imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

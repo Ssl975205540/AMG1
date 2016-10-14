@@ -12,14 +12,14 @@ import android.view.ViewGroup;
  * Created by dllo on 16/9/20.
  */
 public abstract class Base_Fragment extends Fragment{
-
     public Context context;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return setLayout(inflater);
+        return inflater.inflate(setLayout(),null);
 
 
     }
@@ -29,20 +29,16 @@ public abstract class Base_Fragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         control();
         networkRequest();
-
-
     }
 
     protected abstract void networkRequest();
 
-    protected abstract View setLayout(LayoutInflater inflater);
+    protected abstract int setLayout();
 
     protected abstract void control();
 
 
     public < T extends Fragment> T findFragmentByid(int i){
-
-
 
 
         return (T) getFragmentManager().findFragmentById(i);
@@ -68,5 +64,12 @@ public abstract class Base_Fragment extends Fragment{
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context = context;
+    }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
     }
 }

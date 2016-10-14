@@ -6,43 +6,11 @@
     android:layout_height="match_parent"
    >
     <!--轮播图-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-       >
-        <android.support.v4.view.ViewPager
-            android:id="@+id/discoverHeader_Advertisement_ViewPager"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-        </android.support.v4.view.ViewPager>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-
-            android:layout_alignBottom="@+id/discoverHeader_Advertisement_ViewPager"
-            android:orientation="vertical"
-            android:padding="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_bannertext"
-                android:layout_gravity="center_horizontal"
-
-                android:textColor="@android:color/white"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/points"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-
+  <com.youth.banner.Banner
+      android:layout_width="match_parent"
+      android:id="@+id/discoverHeader_Advertisement_ViewPager"
+      android:layout_height="150dp">
+  </com.youth.banner.Banner>
     <!--广告-->
 
     <ImageView
@@ -104,13 +72,13 @@
         android:orientation="vertical"
         android:layout_marginTop="5dp"
         android:background="@drawable/shapelinearlayout"
-        android:layout_height="180dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/disHeader_RelativeLayout"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
             android:background="@drawable/shapelinearlayout"
-            android:layout_height="wrap_content">
+            android:layout_height="45dp">
             <TextView
                 android:text="限时抢购"
                 android:layout_marginLeft="30dp"
@@ -120,7 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-        </LinearLayout>
+
+
+
+
+        </RelativeLayout>
 
 
 

@@ -1,8 +1,5 @@
 package lanou.amg1.forumfragment.page;
 
-import android.view.LayoutInflater;
-import android.view.View;
-
 import lanou.amg1.R;
 import lanou.amg1.basefragment.Base_Fragment;
 
@@ -22,12 +19,11 @@ public class TwoPageFragment extends Base_Fragment {
     }
 
     @Override
-    protected View setLayout(LayoutInflater inflater) {
+    protected int setLayout() {
+        return R.layout.twopagefragment;
 
-
-
-        return inflater.inflate(R.layout.twopagefragment,null);
     }
+
 
     @Override
     protected void control() {

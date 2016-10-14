@@ -10,6 +10,7 @@
         android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:visibility="invisible"
         android:background="@drawable/linearlayout_findcar_onepage"
         android:layout_height="30dp">
 
@@ -18,11 +19,13 @@
             android:layout_centerInParent="true"
             android:background="@drawable/linearlayout_findcar_onepage"
             android:layout_width="wrap_content"
+            android:visibility="invisible"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_gravity="center_vertical"
                 android:layout_width="10dp"
+                android:visibility="invisible"
                 android:layout_height="10dp"
                 android:background="@mipmap/ahlib_nav_icon_search_p"
                 />
@@ -30,6 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 android:text="搜索车系"
                 />
 
@@ -40,12 +44,57 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginLeft="10dp"
+        android:visibility="invisible"
         android:id="@+id/findCar_OnePage_First_RecyclerView"
         android:layout_width="wrap_content"
-
         android:layout_below="@+id/findCar_Search_RelativeLayout"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:divider="@null"/>
+
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="right|top"
+            android:background="#F0EFF5"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_layout_catalog"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#F0EFF5"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:textColor="#454545"/>
+        </LinearLayout>
+
+        <lanou.amg1.findcarfragment.fincarpage.findcarone.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="20.0dip"
+            android:layout_height="400dp"
+            android:layout_gravity="right|center"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textvv"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
 
 
 

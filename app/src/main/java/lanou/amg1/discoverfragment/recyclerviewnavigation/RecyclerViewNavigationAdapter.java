@@ -22,6 +22,12 @@ public class RecyclerViewNavigationAdapter extends RecyclerView.Adapter<Recycler
 
     private Context context;
 
+    private OnRecyclerltemClickListener onRecyclerltemClickListener;
+
+    public void setOnRecyclerltemClickListener(OnRecyclerltemClickListener onRecyclerltemClickListener) {
+        this.onRecyclerltemClickListener = onRecyclerltemClickListener;
+    }
+
     private DiscoverBean bean;
     private int i;
 
@@ -49,13 +55,24 @@ public class RecyclerViewNavigationAdapter extends RecyclerView.Adapter<Recycler
 
 
     @Override
-    public void onBindViewHolder(RecyclerViewNavigationAdapter.ViewHoler holder, int position) {
+    public void onBindViewHolder(final RecyclerViewNavigationAdapter.ViewHoler holder, final int position) {
 
         Picasso.with(context).load( bean.getResult().getCardlist().get(i).getData().get(position).getImageurl()).into(holder.recycler_Navigation_Item_ImageView);
 
 
         holder.recycler_Navigation_Item_TextView_Title.setText(bean.getResult().getCardlist().get(i).getData().get(position).getTitle());
 
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onRecyclerltemClickListener.click(position,holder);
+
+
+
+            }
+        });
 
 
 
@@ -71,10 +88,11 @@ public class RecyclerViewNavigationAdapter extends RecyclerView.Adapter<Recycler
 
         private  ImageView recycler_Navigation_Item_ImageView;
         private  TextView recycler_Navigation_Item_TextView_Title;
-
+        private  View itemView;
         public ViewHoler(View itemView) {
             super(itemView);
 
+            this.itemView = itemView;
             recycler_Navigation_Item_ImageView = (ImageView)itemView.findViewById(R.id.recycler_Navigation_Item_ImageView);
 
             recycler_Navigation_Item_TextView_Title = (TextView)itemView.findViewById(R.id.recycler_Navigation_Item_TextView_Title);

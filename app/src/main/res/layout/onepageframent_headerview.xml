@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+                android:src="@mipmap/gxtj" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+                android:src="@mipmap/rxph" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+
+                android:src="@mipmap/jjyh" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+                android:src="@mipmap/wdyh" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+
+                android:gravity="center"
+                android:text="个性推荐" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+
+                android:gravity="center"
+                android:text="热销排行" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:text="降价优惠" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:text="我的收藏" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#F0EFF5">
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="条件选车"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/im"
+            android:layout_width="20dp"
+            android:src="@mipmap/ahlib_arrow_right"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@+id/im"
+            android:text="多少车"
+            android:textColor="#FFD3A9"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:background="#F0EFF5"
+    android:layout_height="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="热门品牌"
+
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/onePage_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:background="#F0EFF5"
+        android:layout_height="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="主打车"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/findCar_OnePage_Flagship_ImagView0"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/findCar_OnePage_Flagship_ImagView1"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/findCar_OnePage_Flagship_ImagView2"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

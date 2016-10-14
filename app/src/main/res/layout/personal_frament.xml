@@ -77,6 +77,7 @@
 
 
                         <RelativeLayout
+                            android:id="@+id/personal_Sina_relayout"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="match_parent">
@@ -121,6 +122,7 @@
 
 
                         <RelativeLayout
+                            android:id="@+id/personal_QQ_relayout"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="match_parent">
@@ -164,6 +166,7 @@
 
 
                         <RelativeLayout
+                            android:id="@+id/personal_wechat_relayout"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="match_parent">
@@ -249,6 +252,7 @@
 
 
                 <RelativeLayout
+
                     android:layout_marginTop="5dp"
                     android:background="@drawable/relativelayoutselector"
 
@@ -360,6 +364,7 @@
 
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/personal_option_relayout"
                     android:layout_marginTop="5dp"
                     android:background="@android:color/white"
                     android:layout_width="match_parent"

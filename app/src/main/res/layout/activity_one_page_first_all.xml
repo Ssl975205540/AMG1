@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
   >
     <RelativeLayout
+        android:id="@+id/rr"
         android:layout_width="match_parent"
         android:background="@drawable/shape_hs"
 
@@ -29,7 +29,17 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_below="@+id/rr"
+        android:id="@+id/one_page_first_all_progress"
+        style="@style/play_ProgressBar"
+        android:layout_height="2dp"
+        android:max="100" />
+
 <RelativeLayout
+    android:layout_below="@+id/one_page_first_all_progress"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,6 +52,7 @@
     </ListView>
 
     <WebView
+
 
         android:id="@+id/one_Page_First_All_WebView"
         android:layout_width="match_parent"
@@ -63,4 +74,59 @@
 
 
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/share_relayout"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="发表回帖..."
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_height="wrap_content" />
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/collection"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/collection"
+
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/share"
+            android:layout_height="wrap_content" />
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:id="@+id/share"
+            android:src="@mipmap/share"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:id="@+id/onePageActivity_LinearLayout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:clickable="false"
+        android:visibility="invisible"
+        android:background="#a9060606"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</RelativeLayout>

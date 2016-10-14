@@ -1,11 +1,11 @@
 package lanou.amg1.findcarfragment;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import lanou.amg1.R;
 import lanou.amg1.basefragment.Base_Fragment;
 import lanou.amg1.findcarfragment.fincarpage.findcarone.FindCar_OnePgae;
-import lanou.amg1.findcarfragment.fincarpage.findcartwo.FindCar_TwoPage;
+import lanou.amg1.findcarfragment.fincarpage.findcartwo.FindCarTwoPage;
+import lanou.amg1.search.SearchActivity;
 
 
 /**
@@ -24,10 +25,9 @@ import lanou.amg1.findcarfragment.fincarpage.findcartwo.FindCar_TwoPage;
 public class FindCarFragment extends Base_Fragment {
     private ViewPager findCarFragment_ViewPager;
     private TabLayout findCarFragment_TabLayout;
-    private ImageView findCarFragment_Js_ImageView;
     private ImageView findCarFragment_Vs_ImageView;
     private TextView findCarFragment_Bj_TextView;
-
+    private boolean mHasLoadedOnce = false;
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void networkRequest() {
@@ -39,12 +39,14 @@ public class FindCarFragment extends Base_Fragment {
 
         arrayList.add(new FindCar_OnePgae());
 
-        arrayList.add(new FindCar_TwoPage());
+        arrayList.add(new FindCarTwoPage());
 
 
         findCarFragmentAdapter.setArrayList(arrayList);
 
         findCarFragment_ViewPager.setAdapter(findCarFragmentAdapter);
+
+        findCarFragment_ViewPager.setOffscreenPageLimit(2);
 
         findCarFragment_TabLayout.setupWithViewPager(findCarFragment_ViewPager);
 
@@ -57,7 +59,6 @@ public class FindCarFragment extends Base_Fragment {
 
                     case 0:
 
-                        findCarFragment_Js_ImageView.setVisibility(View.VISIBLE);
                         findCarFragment_Vs_ImageView.setVisibility(View.VISIBLE);
                         findCarFragment_Bj_TextView.setVisibility(View.INVISIBLE);
 
@@ -65,7 +66,6 @@ public class FindCarFragment extends Base_Fragment {
                         break;
 
                     case 1:
-                        findCarFragment_Js_ImageView.setVisibility(View.INVISIBLE);
                         findCarFragment_Vs_ImageView.setVisibility(View.INVISIBLE);
                         findCarFragment_Bj_TextView.setVisibility(View.VISIBLE);
 
@@ -91,12 +91,11 @@ public class FindCarFragment extends Base_Fragment {
 
 
     }
+
     @Override
-    protected View setLayout(LayoutInflater inflater) {
+    protected int setLayout() {
+        return R.layout.findcar_fragment;
 
-
-
-        return inflater.inflate(R.layout.findcar_fragment,null);
     }
 
     @Override
@@ -104,11 +103,27 @@ public class FindCarFragment extends Base_Fragment {
 
         findCarFragment_ViewPager = findById(R.id.findCarFragment_ViewPager);
         findCarFragment_TabLayout = findById(R.id.findCarFragment_TabLayout);
-
-
-        findCarFragment_Js_ImageView = findById(R.id.findCarFragment_Js_ImageView);
         findCarFragment_Vs_ImageView = findById(R.id.findCarFragment_Vs_ImageView);
         findCarFragment_Bj_TextView = findById(R.id.findCarFragment_Bj_TextView);
+        findCarFragment_Vs_ImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+
+                intent.putExtra("search","搜索车系");
+                startActivity(intent);
+
+
+
+            }
+        });
+
+
 
     }
+
+
+
 }

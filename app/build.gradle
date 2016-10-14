@@ -31,4 +31,8 @@ dependencies {
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
     compile 'com.bigkoo:quicksidebar:1.0.3'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.youth.banner:banner:1.3.2'
+    compile files('libs/ShareSDK-Core-2.7.7.jar')
+    compile files('libs/jpush-android-2.2.0.jar')
+
 }

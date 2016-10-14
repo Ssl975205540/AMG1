@@ -3,6 +3,8 @@ package lanou.amg1.recommendfragment;
 import android.app.Application;
 import android.content.Context;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Created by dllo on 16/9/21.
  */
@@ -12,6 +14,8 @@ public class MyApp extends Application{
     public void onCreate() {
         super.onCreate();
         mContext = this;
+        JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
+        JPushInterface.init(this);     		// 初始化 JPush
     }
 
     public static Context getContext() {

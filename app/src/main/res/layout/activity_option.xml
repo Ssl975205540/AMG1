@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lanou.amg1.personalfragment.option.OptionActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F0EFF5"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="50dp">
+
+            <ImageView
+
+                android:id="@+id/activity_option_imagview"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ahlib_nav_icon_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="设置"
+                android:textColor="#898979"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/ll"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#F0EFF5"
+                android:layout_height="5dp">
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/shape1212"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_size" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/activity_option_radiobtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:text="@string/set_up_text_small" />
+
+                    <RadioButton
+                        android:id="@+id/activity_option_radiobtn2"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:button="@null"
+                        android:text="@string/set_up_text_middle" />
+
+                    <RadioButton
+                        android:id="@+id/activity_option_radiobtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:button="@null"
+                        android:text="@string/set_up_text_big" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+
+                android:background="@drawable/shape1212"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_small_image" />
+
+             <Switch
+                 android:id="@+id/activity_option_Switch1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+
+                android:background="@drawable/shape1212"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="夜间模式" />
+
+                <Switch
+                    android:id="@+id/activity_option_Switch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/set_up_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_up_text_hd_image" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_up_text_hd_image_more"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/activity_option_Switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/shape1212"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_forum_pager" />
+
+                <Switch
+                    android:id="@+id/activity_option_Switch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_option_layout1"
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+
+                android:background="@drawable/shape1212"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/set_up_text_push" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:src="@mipmap/ahlib_arrow_right"
+                    android:layout_height="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_option_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+
+                android:background="@drawable/shape1212"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_clear_cache" />
+
+                <TextView
+                    android:id="@+id/setactivity_tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#F0EFF5"
+                android:layout_height="5dp">
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/activity_option_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/shape1212"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_help" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:src="@mipmap/ahlib_arrow_right"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/activity_option_layout4"
+                android:layout_height="45dp"
+                android:background="@drawable/shape1212"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_app_store" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:src="@mipmap/ahlib_arrow_right"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/activity_option_layout5"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/shape1212"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/set_up_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/set_up_text_detection_update" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:src="@mipmap/ahlib_arrow_right"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/activity_option_layoutall"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:background="#a9060606"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+</RelativeLayout>

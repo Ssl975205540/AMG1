@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
 
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <lanou.amg1.gsonrequest.xlistview.XListView
         android:id="@+id/onePageListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,11 +15,27 @@
         >
 
 
-    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+    </lanou.amg1.gsonrequest.xlistview.XListView>
+
+
+    <LinearLayout
+        android:id="@+id/popup_recommend"
+        android:layout_width="match_parent"
+        android:background="#e70d55da"
+        android:visibility="gone"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/popup_recommend_text"
+            android:layout_width="wrap_content"
+            android:text="为你推荐30条内容"
+            android:layout_marginLeft="20dp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

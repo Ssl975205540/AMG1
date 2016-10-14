@@ -2,4 +2,32 @@
     <string name="app_name">汽车之家</string>
     <string name="mr">美人“记”</string>
     <string name="hot">24小时热帖</string>
+    <string name="hello">Hello World, JPush!</string>
+    <string name="tag_hint">Tag can be number, alphabet, underscore, Chinese. Use , to split many tags.</string>
+    <string name="alias_hint">Alias can be number, alphabet, underscore, Chinese.</string>
+    <string name="style_hint">style should be number</string>
+    <string name="error_style_empty">style cannot be empty</string>
+    <string name="error_alias_empty">alias cannot be empty</string>
+    <string name="error_tag_empty">tag cannot be empty</string>
+    <string name="error_tag_gs_empty">Invalid format</string>
+    <string name="error_network">Failed to init due to network exception.</string>
+    <string name="logining">Running in background. Please see log.</string>
+    <string name="setting_su">Succeed to set</string>
+
+    <string name="search_history">搜索历史</string>
+    <string name="search_remove">清除</string>
+    <string name="dialog_remove_title">您确定要清除历史记录吗?</string>
+    <string name="set_up_text_size">正文字号</string>
+    <string name="set_up_text_small">小</string>
+    <string name="set_up_text_middle">中</string>
+    <string name="set_up_text_big">大</string>
+    <string name="set_up_text_small_image">文章/帖子小图模式</string>
+    <string name="set_up_text_hd_image">车型图片高清显示</string>
+    <string name="set_up_text_hd_image_more">高清图模式下耗费更多流量</string>
+    <string name="set_up_text_forum_pager">论坛摘要模式</string>
+    <string name="set_up_text_push">推送设置</string>
+    <string name="set_up_text_clear_cache">清除缓存</string>
+    <string name="set_up_text_help">帮助与反馈</string>
+    <string name="set_up_text_app_store">给汽车之家评分</string>
+    <string name="set_up_text_detection_update">检测更新</string>
 </resources>

@@ -79,6 +79,12 @@ public class OnPageListViewAdapter extends BaseAdapter{
 
     }
 
+    public void setBean1(OnePageFragmentBean bean1) {
+        bean.getResult().getList().addAll(bean1.getResult().getList());
+        notifyDataSetChanged();
+
+    }
+
     class ViewHolder{
 
 

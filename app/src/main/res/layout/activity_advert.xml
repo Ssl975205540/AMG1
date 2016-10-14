@@ -8,18 +8,39 @@
     <ImageView
         android:id="@+id/AdvertActivity_ImageView"
         android:layout_width="match_parent"
+        android:background="@mipmap/wel"
         android:layout_height="match_parent"
         />
 
 
-    <TextView
-        android:id="@+id/AdvertActivity_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#111111"
-        android:textSize="40dp"
-        android:text="跳过 3秒"
-        />
+    <WebView
+        android:id="@+id/advertActivity_webview"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+
+    </WebView>
+
+
+
+
+        <TextView
+            android:id="@+id/AdvertActivity_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2f060606"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:text="正在加载,请稍后..."
+            />
+
+
+
+
+
 
 
 </RelativeLayout>

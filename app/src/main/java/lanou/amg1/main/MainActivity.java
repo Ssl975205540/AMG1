@@ -1,10 +1,11 @@
 package lanou.amg1.main;
 
-import android.content.Intent;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,7 +17,6 @@ import lanou.amg1.R;
 import lanou.amg1.discoverfragment.discovermain.DiscoverFragment;
 import lanou.amg1.findcarfragment.FindCarFragment;
 import lanou.amg1.forumfragment.ForumFragment;
-import lanou.amg1.guidepage.GuidePageActivity;
 import lanou.amg1.personalfragment.PersonalFragment;
 import lanou.amg1.recommendfragment.RecommendFragment;
 import lanou.amg1.urlall.URLAll;
@@ -35,6 +35,12 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
     private FindCarFragment findCarFragment;
     private ForumFragment forumFragment;
     private LinearLayout activity_main_LinearLayout_All;
+    private SharedPreferences sharedPreferences1;
+    private Boolean visible;
+    private LinearLayout guidepageone_linearlayout;
+    private Button btn_GuidePageActivity_Fragment_One;
+    private LinearLayout guidepagetwo_linearlayout;
+    private Button btn_GuidePageActivity;
 
 
     @Override
@@ -44,8 +50,16 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
 
     @Override
     protected void control() {
+
+
         EventBus.getDefault().register(this);
         frameLayout_MainActivity = (FrameLayout) findViewById(R.id.frameLayout_MainActivity);
+        guidepageone_linearlayout = (LinearLayout) findViewById(R.id.guidepageone_linearlayout);
+        guidepagetwo_linearlayout = (LinearLayout) findViewById(R.id.guidepagetwo_linearlayout);
+        btn_GuidePageActivity_Fragment_One = (Button) findViewById(R.id.btn_GuidePageActivity_Fragment_One);
+        btn_GuidePageActivity = (Button) findViewById(R.id.btn_GuidePageActivity);
+        btn_GuidePageActivity_Fragment_One.setOnClickListener(this);
+        btn_GuidePageActivity.setOnClickListener(this);
         activity_main_LinearLayout_All = (LinearLayout) findViewById(R.id.activity_main_LinearLayout_All);
         nav_icon_article = (ImageView) findViewById(R.id.nav_icon_article);
         nav_icon_findcar = (ImageView) findViewById(R.id.nav_icon_findcar);
@@ -58,11 +72,14 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
         sharedPreference_edit.commit();
         Boolean first = sharedPreferences.getBoolean(URLAll.SHAREDPREFERENCES_WELCOMEPAGE_BOOLEAN, false);
         if (first == false) {
-            Intent intent = new Intent(MainActivity.this, GuidePageActivity.class);
-            startActivity(intent);
-            overridePendingTransition(URLAll.ZERO, URLAll.ZERO);
-            sharedPreference_edit.putBoolean(URLAll.SHAREDPREFERENCES_WELCOMEPAGE_BOOLEAN, true);
-            sharedPreference_edit.commit();
+
+            guidepageone_linearlayout.setVisibility(View.VISIBLE);
+//            Intent intent = new Intent(MainActivity.this, GuidePageActivity.class);
+//            startActivity(intent);
+//            overridePendingTransition(URLAll.ZERO, URLAll.ZERO);
+//            guidepageone_linearlayout.setVisibility(View.VISIBLE);
+//            sharedPreference_edit.putBoolean(URLAll.SHAREDPREFERENCES_WELCOMEPAGE_BOOLEAN, true);
+//            sharedPreference_edit.commit();
         }
 
 
@@ -70,7 +87,17 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
         fragmentTransaction.replace(R.id.frameLayout_MainActivity, recommendFragment);
         fragmentTransaction.commit();
         interchange(URLAll.ONE);
+        sharedPreferences1 = this.getSharedPreferences("PersonalFragment", Context.MODE_PRIVATE);
 
+        visible = sharedPreferences1.getBoolean("VISIBLE", true);
+        if (visible) {
+
+            activity_main_LinearLayout_All.setVisibility(View.INVISIBLE);
+
+        } else {
+            activity_main_LinearLayout_All.setVisibility(View.VISIBLE);
+
+        }
 
     }
 
@@ -151,6 +178,23 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
 
                 break;
 
+            case R.id.btn_GuidePageActivity_Fragment_One:
+
+                guidepageone_linearlayout.setVisibility(View.GONE);
+
+                guidepagetwo_linearlayout.setVisibility(View.VISIBLE);
+
+                break;
+            case R.id.btn_GuidePageActivity:
+
+                guidepagetwo_linearlayout.setVisibility(View.GONE);
+
+
+                sharedPreference_edit.putBoolean(URLAll.SHAREDPREFERENCES_WELCOMEPAGE_BOOLEAN, true);
+                sharedPreference_edit.commit();
+
+                break;
+
         }
         fragmentTransaction.commit();
 
@@ -200,6 +244,8 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
                 nav_icon_sale.setImageResource(R.mipmap.nav_icon_sale_f);
                 nav_icon_my.setImageResource(R.mipmap.nav_icon_my_p);
                 break;
+
+
         }
     }
 
@@ -221,6 +267,8 @@ public class MainActivity extends MainActivityBase implements View.OnClickListen
 
                 finish();
                 break;
+
+
         }
     }
 }

@@ -14,8 +14,15 @@ public class URLAll {
     public static final int THREE = 3;
     public static final int FOUR = 4;
     public static final int Five = 5;
+    public static final String MORE_URL = "http://news.app.autohome.com.cn/shouye_v7.0.0/mobile/metadata.ashx?a=2&pm=2&v=7.0.7&types=newstype%7C636002832282225908%2Cvideotype%7C636002832282225908";
+    // 欢迎页
+    public static final String WELCOME_URL = "http://url.cn/40IP3VW";
+    public static final String NEW_URL="http://app.api.autohome.com.cn/autov4.2.5/news/newslist-a2-pm1-v4.2.5-c0-nt0-p1-s30-l0.html";//最新
+//    http://adnewnc.app.autohome.com.cn/advert_v7.0.0/ad/focusadandnewslistad.ashx?pageid=bbfd27d3-94d4-49ab-84c1-c8b52dd654da&lon=121.550935&cityid=0&mac=28%3Afa%3Aa0%3Aa5%3A65%3Ad7&networkid=0&appid=2&idfa=0&devicebrand=vivo&deviceid=869723021470361&devicemodel=vivoX6D&platform=2&pageindex=1&gps_city=210200&version=7.1.5&isretry=0&newstype=0&lat=38.889732
+//    http://mobile.app.autohome.com.cn/mobile_v5.9.5/mobile/metadata.ashx?types=newstype%7C635990328072382159%2Cseriesnews%7C635975674429487538%2Cpiccategory%7C635975674429487538%2Clevel%7C635975674429487538%2Ccountry%7C635975674429487538%2Cprice%7C635975674429487538%2Cvideotype%7C635975674429487538%2Cjingxuan%7C636076361379610366%2Cfindorder%7C635975674429487538%2Cdealerscope%7C635975674429487538%2Cspectestdetail%7C635975674429487538%2Cseriesclubfilter%7C635975674429487538%2Cbuyorder%7C635975674429487538%2Cspeccompare%7C635975674429487538&a=2&pm=2&v=7.1.5
 
-
+    //优创
+    //    http://news.app.autohome.com.cn/newspf_v7.1.0/newspf/NPNewsList.ashx?a=2&pm=2&v=7.1.5&au=&type=3&lastid=&lastuid=27774674&size=30
     public static final String SHAREDPREFERENCES_WELCOMEPAGE= "welcomepage_welComePage";
     public static final String SHAREDPREFERENCES_WELCOMEPAGE_BOOLEAN= "first";
     public static final String SHAREDPREFERENCES_MAIN= "main_mainActivity";
@@ -86,6 +93,35 @@ public class URLAll {
     public static final String SEA_PEARL_URL = "http://app.api.autohome.com.cn/autov4.8.8/club/jingxuantopic-pm1-c212-p1-s30.json";//沧海遗珠
 
     public static final String TOP_POSTS_URL = "http://183.232.160.141/club.app.autohome.com.cn/club_v7.0.5/club/shotfoumlist-pm2-p1-s50.json";//热帖 public static final String TOP_POSTS_URL = "http://club.app.autohome.com.cn/club_v5.6.0/club/shotfoumlist-pm1-p1-s50.json";//热帖
+
+
+    //第三页
+    public static final  String NEWCAR_BRAND_URL ="http://223.99.255.20/cars.app.autohome.com.cn/cars_v5.7.0/cars/brands-pm2-ts635966571635589297.json";
+    //第三页GirdView
+    public static  final  String HOTBRAND_URL = "http://183.232.160.141/cars.app.autohome.com.cn/dealer_v6.0.0/dealer/hotbrands-pm2.json";
+
+    public  static final  String MAINCAR_URL ="http://183.232.160.141/adnewnc.app.autohome.com.cn/advert_v7.0.0/ad/infoad.ashx?pageid=cee6fa23-52bc-4547-9ae9-ab0bc02d36d8&cityid=0&mac=74%3Aac%3A5f%3A6d%3A3c%3A93&networkid=0&appid=2&idfa=0&devicebrand=360&deviceid=860954030358581&lng=121.550946&devicemodel=1501_M02&platform=2&adtype=1&gps_city=210200&version=7.0.7&isretry=0&provinceid=210000&lat=38.889732";
+
+    public  static final  String CITY ="http://comm.app.autohome.com.cn/news/province-pm2-ts635109755524561900.json";
+
+    // 车商城 (webview)
+    public static final String DISCOVER_CAR_MALL = "http://m.mall.autohome.com.cn/?isapp=1";
+    // 分期购车 (webview)
+    public static final String DISCOVER_HIRE_CAR = "http://m.mall.autohome.com.cn/finance/list/3-0-0-0-0-0-0-0-0-1.html?isapp=1";
+    // 养车之家 (webview)
+    public static final String DISCOVER_SUBSIDY_HOME = "http://yc.m.autohome.com.cn/banner/list?serviceCity=210200&isWz=false";
+    // 找二手车 (webview)
+    public static final String DISCOVER_FIND_CAR = "http://m.che168.com/beijing/list/?sourcename=main&pvareaid=101964";
+    // 团购活动 (webview)
+    public static final String DISCOVER_GROUP_BUY = "http://tuan.m.autohome.com.cn/app/h5/home";
+    // 爱车估值 (webview)
+    public static final String DISCOVER_CAR_VALUATION = "http://m.che168.com/pinggu/?buymark=oaha10027&sellmark=oaha10026&appversionbuy=2.08V&appversionsell=2.04V&hideheadfoot=1&hidead=1&pvareaid=101375";
+    // 全部
+    public static final String DISCOVER_ALL_URL = "http://mobile.app.autohome.com.cn/discover_v7.1.0/mobile/entrylist.ashx?pm=1";
+
+
+
+
 
     public static final ArrayList<Bean> ARRLIST_ALL(){
 

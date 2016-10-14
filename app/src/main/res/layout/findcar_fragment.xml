@@ -17,7 +17,7 @@
 
         android:background="@android:color/white"
         app:tabIndicatorColor="@android:color/black"
-        android:layout_height="45dp">
+        android:layout_height="50dp">
 
 
     </android.support.design.widget.TabLayout>
@@ -26,36 +26,27 @@
 
 
 
-    <ImageView
-        android:id="@+id/findCarFragment_Js_ImageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginRight="60dp"
-      android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:background="@mipmap/findcarright"
-        />
 
     <ImageView
-        android:id="@+id/findCarFragment_Vs_ImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/findcarright_s"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
+           android:id="@+id/findCarFragment_Vs_ImageView"
+            android:layout_width="22dp"
+            android:src="@mipmap/ahlib_nav_icon_search_p"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_height="22dp"
         />
 
 <TextView
     android:id="@+id/findCarFragment_Bj_TextView"
     android:layout_width="wrap_content"
-    android:text="北京"
+    android:text="大连"
     android:layout_centerVertical="true"
     android:layout_alignParentRight="true"
     android:textSize="16dp"
     android:visibility="invisible"
     android:textColor="#437FFA"
-    android:layout_marginRight="24dp"
+    android:layout_marginRight="10dp"
     android:layout_height="wrap_content" />
 </RelativeLayout>
 

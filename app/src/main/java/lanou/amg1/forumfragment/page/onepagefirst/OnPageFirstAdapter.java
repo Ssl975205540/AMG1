@@ -30,6 +30,13 @@ public class OnPageFirstAdapter extends BaseAdapter{
         this.bean = bean;
     }
 
+
+    public void setBean1(OnePageFirstBean bean1) {
+
+        bean.getResult().getList().addAll(bean1.getResult().getList());
+        notifyDataSetChanged();
+
+    }
     @Override
     public int getCount() {
 

@@ -14,6 +14,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 
+import cn.jpush.android.api.JPushInterface;
 import lanou.amg1.R;
 import lanou.amg1.advert.AdvertActivity;
 import lanou.amg1.guidepoint.CircleIndicator;
@@ -130,6 +131,17 @@ public class welComePage extends FragmentActivity {
         EventBus.getDefault().unregister(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
 
 
 }

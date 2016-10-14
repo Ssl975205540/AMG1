@@ -75,7 +75,26 @@ public class GsonRequest<T> extends Request<T> {
 
     }
 
-
+//    GsonRequest<OnePageFragmentBean> onePageFragmentBeanGsonRequest = new GsonRequest<OnePageFragmentBean>(URLAll.FORUM_PAGE, OnePageFragmentBean.class, new Response.Listener<OnePageFragmentBean>() {
+//        @Override
+//        public void onResponse(OnePageFragmentBean bean) {
+//
+//            OnPageListViewAdapter pageListViewAdapter = new OnPageListViewAdapter(getContext());
+//
+//            pageListViewAdapter.setBean(bean);
+//
+//            onePageListView.setAdapter(pageListViewAdapter);
+//            onePageListView.onRefreshComplete();
+//
+//        }
+//    }, new Response.ErrorListener() {
+//        @Override
+//        public void onErrorResponse(VolleyError error) {
+//
+//        }
+//    });
+//
+//    VolleySingleton.getInstance().addRequest(onePageFragmentBeanGsonRequest);
 
 
 }
