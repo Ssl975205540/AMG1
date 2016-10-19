@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lanou.amg1.advert.AdvertActivity">
+    tools:context=".advert.AdvertAty">
 
     <ImageView
-        android:id="@+id/AdvertActivity_ImageView"
+        android:id="@+id/advertaty_iv"
         android:layout_width="match_parent"
         android:background="@mipmap/wel"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
 
 
     <WebView
-        android:id="@+id/advertActivity_webview"
+        android:id="@+id/advertaty_wbv"
         android:layout_width="match_parent"
         android:visibility="gone"
         android:layout_height="match_parent">
@@ -26,7 +26,7 @@
 
 
         <TextView
-            android:id="@+id/AdvertActivity_TextView"
+            android:id="@+id/advertaty_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#2f060606"

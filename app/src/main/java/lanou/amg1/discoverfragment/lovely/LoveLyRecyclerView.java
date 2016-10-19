@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import lanou.amg1.R;
-import lanou.amg1.discoverfragment.discovermain.DiscoverBean;
+import lanou.amg1.bean.DiscoverBean;
 
 
 /**
@@ -39,7 +39,7 @@ public class LoveLyRecyclerView extends RecyclerView.Adapter<LoveLyRecyclerView.
     @Override
     public LoveLyRecyclerView.ViewHoler onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_lovelyadapter_item,null);
+        View view = LayoutInflater.from(context).inflate(R.layout.rcv_lovelyadp_item,null);
 
         ViewHoler viewHoler = new ViewHoler(view);
 

@@ -3,10 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lanou.amg1.personalfragment.option.OptionActivity">
+    tools:context=".personal.option.OptionAty">
+
+    <RelativeLayout
+        android:id="@+id/activity_option_relayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
 
     <LinearLayout
-        android:id="@+id/ll"
+        android:id="@+id/activity_option_main"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#F0EFF5"
@@ -27,6 +34,7 @@
                 android:src="@mipmap/ahlib_nav_icon_back" />
 
             <TextView
+                android:id="@+id/activity_option_set_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -41,7 +49,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_below="@+id/ll"
+            android:layout_below="@+id/activity_option_main"
             android:layout_height="match_parent"
             android:background="@android:color/white"
             android:orientation="vertical">
@@ -56,7 +64,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="10dp">
@@ -104,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
 
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
 
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -128,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
 
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
 
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -187,7 +195,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="10dp">
@@ -211,7 +219,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
 
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
 
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -238,7 +246,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
 
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="10dp">
@@ -251,7 +259,7 @@
                     android:text="@string/set_up_text_clear_cache" />
 
                 <TextView
-                    android:id="@+id/setactivity_tv_num"
+                    android:id="@+id/activity_option_layout2_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -266,7 +274,7 @@
                 android:id="@+id/activity_option_layout3"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
 
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -289,7 +297,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/activity_option_layout4"
                 android:layout_height="45dp"
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
 
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -312,7 +320,7 @@
                 android:id="@+id/activity_option_layout5"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:background="@drawable/shape1212"
+                android:background="@drawable/shape_background"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="10dp">
@@ -331,6 +339,14 @@
             </LinearLayout>
         </LinearLayout>
 
+    </RelativeLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/activity_option_fralayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/activity_option_layoutall"
@@ -341,4 +357,8 @@
         android:layout_height="match_parent">
 
     </LinearLayout>
+
+
+
+
 </RelativeLayout>

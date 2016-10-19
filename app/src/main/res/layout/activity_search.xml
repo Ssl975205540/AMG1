@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="lanou.amg1.search.SearchActivity">
+    tools:context=".search.SearchAty">
 
     <LinearLayout
         android:id="@+id/rr"
@@ -33,7 +33,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-
                 android:layout_marginBottom="5dp"
                 android:layout_toRightOf="@+id/ss"
                 android:layout_marginTop="5dp"

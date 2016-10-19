@@ -15,13 +15,13 @@
 
     <ImageView
         android:scaleType="fitXY"
-        android:id="@+id/discoverHeader_Advertisement_ImageView"
+        android:id="@+id/discover_Header_Advertisement_iv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
   <android.support.v7.widget.RecyclerView
-      android:id="@+id/recyclerViewDiscoverHeaderNavigation"
+      android:id="@+id/discover_header_navigation_rcv"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
   </android.support.v7.widget.RecyclerView>
@@ -51,7 +51,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewDiscoverHeader_Sector"
+        android:id="@+id/discover_Header_Sector_Rcv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
@@ -97,7 +97,7 @@
 
 
         <lanou.amg1.discoverfragment.horizontallistview.HorizontalListView
-            android:id="@+id/discoverHorizontalListView"
+            android:id="@+id/discover_horizontal_lv"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_width="match_parent"

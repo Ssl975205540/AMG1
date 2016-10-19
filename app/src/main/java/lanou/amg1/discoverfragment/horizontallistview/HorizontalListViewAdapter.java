@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import lanou.amg1.R;
-import lanou.amg1.discoverfragment.discovermain.DiscoverBean;
+import lanou.amg1.bean.DiscoverBean;
 
 
 /**

@@ -24,9 +24,13 @@
     </FrameLayout>
 
 
+
+
+
+
     <LinearLayout
         android:id="@+id/activity_main_LinearLayout"
-        android:layout_weight="0.08"
+        android:layout_weight="0.1"
         android:background="@android:color/white"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -34,47 +38,65 @@
 
         >
 
-        <ImageView
-            android:id="@+id/nav_icon_article"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:src="@mipmap/nav_icon_article_f"
-            android:layout_height="match_parent"
 
-            />
 
-        <ImageView
-            android:id="@+id/nav_icon_forum"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:src="@mipmap/nav_icon_forum_f"
-            />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/nav_icon_findcar"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:src="@mipmap/nav_icon_findcar_f"
 
-            android:layout_height="match_parent" />
+            <RadioButton
+                android:id="@+id/nav_icon_article"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:background="@drawable/nav_icon_article_selected"
+                android:layout_weight="0.06"/>
 
-        <ImageView
-            android:id="@+id/nav_icon_sale"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:src="@mipmap/nav_icon_sale_f"
-            android:layout_height="match_parent"
+            <RadioButton
+                android:id="@+id/nav_icon_forum"
+                android:layout_width="0dp"
+                android:layout_weight="0.06"
+                android:button="@null"
+                android:layout_height="match_parent"
+                android:background="@drawable/nav_icon_forum_selected"
+                />
 
-            />
+            <RadioButton
+                android:id="@+id/nav_icon_findcar"
+                android:layout_width="0dp"
+                android:layout_weight="0.06"
+                android:button="@null"
 
-        <ImageView
-            android:id="@+id/nav_icon_my"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:src="@mipmap/nav_icon_my_f"
-            />
+                android:background="@drawable/nav_icon_findcar_selected"
+
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/nav_icon_sale"
+                android:layout_width="0dp"
+                android:layout_weight="0.06"
+                android:button="@null"
+
+                android:background="@drawable/nav_icon_sale_selected"
+
+                android:layout_height="match_parent"
+
+                />
+
+            <RadioButton
+                android:id="@+id/nav_icon_my"
+                android:layout_width="0dp"
+                android:layout_weight="0.06"
+                android:layout_height="match_parent"
+                android:button="@null"
+
+                android:background="@drawable/nav_icon_my_selected"
+
+                />
+        </RadioGroup>
+
 
 
 
@@ -123,7 +145,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 imagecontrol:border_outside_color="@android:color/white"
-                android:src="@mipmap/tb_two"
+                android:src="@mipmap/round_tb_two"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="10dp"
@@ -174,7 +196,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 imagecontrol:border_outside_color="@android:color/white"
-                android:src="@mipmap/tb_one"
+                android:src="@mipmap/round_tb_one"
                 />
 
 

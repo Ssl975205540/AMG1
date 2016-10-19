@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_background"
+        android:layout_height="45dp">
+
+        <Button
+            android:id="@+id/activity_popup_btn1"
+            android:layout_width="wrap_content"
+            android:text="取消"
+            android:background="@android:color/white"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/activity_popup_btn2"
+            android:layout_width="wrap_content"
+            android:text="确定"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/white"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TableRow android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <NumberPicker android:id="@+id/np1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:focusable="true"
+
+            android:focusableInTouchMode="true"/>
+        <NumberPicker android:id="@+id/np2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:focusable="true"
+
+            android:focusableInTouchMode="true"/>
+    </TableRow>
+
+</LinearLayout>

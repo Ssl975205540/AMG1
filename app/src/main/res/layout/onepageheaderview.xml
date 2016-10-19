@@ -80,14 +80,14 @@
         android:textColor="#6698FB"
         android:text="媳妇当车模"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
         />
     <TextView
         android:id="@+id/onePageHeader2"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:textSize="13dp"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
         android:gravity="center"
         android:textColor="#6698FB"
         android:layout_marginLeft="20dp"
@@ -100,7 +100,7 @@
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:textSize="13dp"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
         android:gravity="center"
         android:textColor="#6698FB"
         android:layout_marginLeft="20dp"
@@ -127,7 +127,7 @@
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:textSize="13dp"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
         android:gravity="center"
         android:textColor="#6698FB"
         android:text="摩友天地"
@@ -139,7 +139,7 @@
         android:layout_height="30dp"
         android:textSize="13dp"
         android:gravity="center"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
         android:textColor="#6698FB"
         android:text="精挑细选"
         />
@@ -149,7 +149,7 @@
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:textSize="13dp"
-        android:background="@drawable/blueshape"
+        android:background="@drawable/shape_blue"
 
         android:gravity="center"
         android:textColor="#6698FB"
@@ -159,7 +159,7 @@
         <TextView
             android:id="@+id/onePageHeader7"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/blueshape"
+            android:background="@drawable/shape_blue"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:textSize="13dp"
@@ -186,7 +186,7 @@
             android:id="@+id/im"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/huo"
+            android:src="@mipmap/hot"
             android:layout_margin="10dp"
 
             />

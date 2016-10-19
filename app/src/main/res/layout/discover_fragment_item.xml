@@ -6,7 +6,7 @@
 
 
     <ImageView
-        android:id="@+id/discoverItemImageView"
+        android:id="@+id/discover_item_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -16,7 +16,7 @@
         />
 
     <LinearLayout
-        android:layout_toRightOf="@+id/discoverItemImageView"
+        android:layout_toRightOf="@+id/discover_item_iv"
         android:layout_width="wrap_content"
         android:layout_marginLeft="5dp"
         android:orientation="vertical"
@@ -27,14 +27,14 @@
             android:layout_marginTop="15dp"
             android:textColor="@android:color/black"
             android:textSize="13dp"
-            android:id="@+id/discoverItemTitleTextView"
+            android:id="@+id/discover_item_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
 
         <TextView
             android:layout_marginTop="15dp"
-            android:id="@+id/discoverItemAdinfoTextView"
+            android:id="@+id/discover_item_adinfo_tv"
             android:textSize="11dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
         <TextView
             android:layout_marginTop="20dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/discoverItemPriceTextView"
+            android:id="@+id/discover_item_price_tv"
             android:layout_width="wrap_content"
             android:textSize="10dp"
             android:textColor="@android:color/holo_red_dark"

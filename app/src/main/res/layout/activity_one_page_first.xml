@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".forumfragment.page.onepagefirst.OnePageFirstActivity">
+    tools:context=".forum.page.onepagefirst.OnePageFirstAty">
 <RelativeLayout
     android:id="@+id/re"
     android:layout_width="match_parent"
@@ -32,13 +32,13 @@
 </RelativeLayout>
 
 
-    <lanou.amg1.gsonrequest.xlistview.XListView
+    <lanou.amg1.tools.xlistview.XListView
         android:id="@+id/onPageFirstActivcty_listView"
         android:layout_below="@+id/re"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-    </lanou.amg1.gsonrequest.xlistview.XListView>
+    </lanou.amg1.tools.xlistview.XListView>
 
 
 

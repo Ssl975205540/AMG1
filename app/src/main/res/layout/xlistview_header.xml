@@ -34,7 +34,7 @@
                     android:id="@+id/ahlib_common_pull_refresh_frame_01"
                     android:layout_width="20dp"
                     android:layout_centerInParent="true"
-                    android:background="@drawable/ahlib_common_pull_refresh_frame_01"
+                    android:background="@mipmap/ahlib_common_pull_refresh_frame_01"
                     android:layout_height="20dp" />
             </RelativeLayout>
 

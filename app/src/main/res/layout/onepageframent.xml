@@ -6,7 +6,8 @@
 
 
 
-    <lanou.amg1.gsonrequest.xlistview.XListView
+
+    <lanou.amg1.tools.xlistview.XListView
         android:id="@+id/onePageListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +16,31 @@
         >
 
 
-    </lanou.amg1.gsonrequest.xlistview.XListView>
+    </lanou.amg1.tools.xlistview.XListView>
+
+    <RelativeLayout
+        android:id="@+id/onePage_refresh_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/onePage_refresh"
+            android:layout_width="20dp"
+            android:layout_marginTop="10dp"
+           android:layout_centerHorizontal="true"
+            android:background="@drawable/progress_circle_loading"
+            android:layout_height="20dp" />
+
+
+        <TextView
+            android:id="@+id/onePage_refresh_textview"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/onePage_refresh"
+            android:layout_height="wrap_content"
+            android:text="正在刷新" />
+    </RelativeLayout>
 
 
     <LinearLayout

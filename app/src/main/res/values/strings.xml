@@ -30,4 +30,12 @@
     <string name="set_up_text_help">帮助与反馈</string>
     <string name="set_up_text_app_store">给汽车之家评分</string>
     <string name="set_up_text_detection_update">检测更新</string>
+
+
+    <string name="push_modo">推送状态</string>
+    <string name="push_time">推送时间</string>
+    <string name="set_up_get_time">推送接受时间</string>
+    <string name="set_every_day">每日:00:00 - 00:00</string>
+    <string name="set_up_text_system">系统消息</string>
+    <string name="set_up_text_person">个人消息</string>
 </resources>

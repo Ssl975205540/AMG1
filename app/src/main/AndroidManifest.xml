@@ -41,7 +41,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
-        android:name=".recommendfragment.MyApp"
+        android:name=".base.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ahlib_icon"
         android:label="@string/app_name"
@@ -72,20 +72,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".welcomepage.welComePage"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:name="lanou.amg1.welcomepage.WelComeAty"
+            android:theme="@style/Theme.AppStartLoad">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".advert.AdvertActivity" />
+        <activity android:name=".advert.AdvertAty" />
         <activity android:name=".main.MainActivity" />
-        <activity android:name=".forumfragment.page.onepagefirst.OnePageFirstActivity" />
-        <activity android:name=".search.SearchActivity" />
-        <activity android:name=".recommendfragment.RecommendMoreActivity" />
-        <activity android:name=".personalfragment.option.OptionActivity"></activity>
+        <activity android:name=".forum.page.onepagefirst.OnePageFirstAty" />
+        <activity android:name=".search.SearchAty" />
+        <activity android:name=".recommend.RecommendMoreAty" />
+        <activity android:name=".personal.option.OptionAty"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->
@@ -169,7 +169,7 @@
 
         <!-- User defined.  For test only  用户自定义的广播接收器-->
         <receiver
-            android:name=".gsonrequest.MyReceiver"
+            android:name=".tools.MyReceiver"
             android:exported="false"
             android:enabled="true">
             <intent-filter>

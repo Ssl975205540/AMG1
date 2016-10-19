@@ -81,7 +81,7 @@
                 android:textColor="#454545"/>
         </LinearLayout>
 
-        <lanou.amg1.findcarfragment.fincarpage.findcarone.SideBar
+        <lanou.amg1.findcar.fincarpage.findcarone.SideBar
             android:id="@+id/sidrbar"
             android:layout_width="20.0dip"
             android:layout_height="400dp"

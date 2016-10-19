@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import lanou.amg1.R;
-import lanou.amg1.discoverfragment.discovermain.DiscoverBean;
+import lanou.amg1.bean.DiscoverBean;
 
 
 /**
@@ -37,7 +37,7 @@ public class RecyclerViewServerAdapter extends RecyclerView.Adapter<RecyclerView
     @Override
     public RecyclerViewServerAdapter.ViewHoler onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.recyclerviewserveradapter_item,null);
+        View view = LayoutInflater.from(context).inflate(R.layout.rcvserveradp_item,null);
 
         ViewHoler viewHoler = new ViewHoler(view);
 

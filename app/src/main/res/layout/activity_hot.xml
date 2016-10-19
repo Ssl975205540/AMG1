@@ -30,13 +30,13 @@
     </RelativeLayout>
 
 
-    <lanou.amg1.gsonrequest.xlistview.XListView
+    <lanou.amg1.tools.xlistview.XListView
         android:id="@+id/onPageFirstHotActivcty_listView"
         android:layout_width="match_parent"
         android:layout_below="@+id/rr"
         android:layout_height="match_parent"
         >
-    </lanou.amg1.gsonrequest.xlistview.XListView>
+    </lanou.amg1.tools.xlistview.XListView>
 
 
 
