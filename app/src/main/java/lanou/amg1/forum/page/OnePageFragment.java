@@ -42,16 +42,16 @@ public class OnePageFragment extends BaseFragment implements View.OnClickListene
     private OnPageLvAdp pageListViewAdapter;
     private TextView[] onePageHeader;
     int i = 1;
-    private RelativeLayout onePageHeader_all;
+    private RelativeLayout onePageHeaderAll;
     private static OnePageFgtBean bean;
-    private LinearLayout popup_recommend;
-    private TextView popup_recommend_text;
+    private LinearLayout popupRecommend;
+    private TextView popupRecommendText;
     private Handler mHandler;
 
     private boolean Load= true;
     private ImageView onePageRefresh;
-    private RelativeLayout onePage_refresh_relativeLayout;
-    private TextView onePage_refresh_textview;
+    private RelativeLayout onePageRefreshRelativeLayout;
+    private TextView onePageRefreshTextview;
 
     @Override
     protected void initData() {
@@ -76,22 +76,22 @@ public class OnePageFragment extends BaseFragment implements View.OnClickListene
 
                 OnePageFragment.bean = bean;
 
-                onePage_refresh_relativeLayout.setVisibility(View.GONE);
+                onePageRefreshRelativeLayout.setVisibility(View.GONE);
                 if (isNetworkAvailable(getActivity())) {
 
                     AlphaAnimation alp = new AlphaAnimation(1.0f, 0.0f);
                     alp.setDuration(3000);
-                    popup_recommend.setAnimation(alp);
-                    popup_recommend.setVisibility(View.INVISIBLE);
+                    popupRecommend.setAnimation(alp);
+                    popupRecommend.setVisibility(View.INVISIBLE);
 
 
 
                 } else {
-                    popup_recommend_text.setText("当前网络不可用,请检查网络设置");
+                    popupRecommendText.setText("当前网络不可用,请检查网络设置");
                     AlphaAnimation alp = new AlphaAnimation(1.0f, 0.0f);
                     alp.setDuration(3000);
-                    popup_recommend.setAnimation(alp);
-                    popup_recommend.setVisibility(View.INVISIBLE);
+                    popupRecommend.setAnimation(alp);
+                    popupRecommend.setVisibility(View.INVISIBLE);
 
 
                 }
@@ -139,14 +139,14 @@ public class OnePageFragment extends BaseFragment implements View.OnClickListene
 
         onePageListView = findById(R.id.onePageListView);
 
-        popup_recommend = findById(R.id.popup_recommend);
+        popupRecommend = findById(R.id.popup_recommend);
 
-        popup_recommend_text = findById(R.id.popup_recommend_text);
+        popupRecommendText = findById(R.id.popup_recommend_text);
 
         onePageHeader = new TextView[7];
         View view = LayoutInflater.from(getContext()).inflate(R.layout.onepageheaderview, null);
-        onePageHeader_all = findById(R.id.onePageHeader_all, view);
-        onePageHeader_all.setOnClickListener(this);
+        onePageHeaderAll = findById(R.id.onePageHeader_all, view);
+        onePageHeaderAll.setOnClickListener(this);
         onePageHeader[0] = findById(R.id.onePageHeader1, view);
         onePageHeader[1] = findById(R.id.onePageHeader2, view);
         onePageHeader[2] = findById(R.id.onePageHeader3, view);
@@ -156,8 +156,8 @@ public class OnePageFragment extends BaseFragment implements View.OnClickListene
         onePageHeader[6] = findById(R.id.onePageHeader7, view);
 
         onePageRefresh =  findById(R.id.onePage_refresh);
-        onePage_refresh_relativeLayout = findById(R.id.onePage_refresh_relativeLayout);
-        onePage_refresh_textview = findById(R.id.onePage_refresh_textview);
+        onePageRefreshRelativeLayout = findById(R.id.onePage_refresh_relativeLayout);
+        onePageRefreshTextview = findById(R.id.onePage_refresh_textview);
 
 
 
@@ -364,17 +364,17 @@ public class OnePageFragment extends BaseFragment implements View.OnClickListene
 
                             AlphaAnimation alp = new AlphaAnimation(1.0f, 0.0f);
                             alp.setDuration(3000);
-                            popup_recommend.setAnimation(alp);
-                            popup_recommend.setVisibility(View.INVISIBLE);
+                            popupRecommend.setAnimation(alp);
+                            popupRecommend.setVisibility(View.INVISIBLE);
 
 
 
                         } else {
-                            popup_recommend_text.setText("当前网络不可用,请检查网络设置");
+                            popupRecommendText.setText("当前网络不可用,请检查网络设置");
                             AlphaAnimation alp = new AlphaAnimation(1.0f, 0.0f);
                             alp.setDuration(3000);
-                            popup_recommend.setAnimation(alp);
-                            popup_recommend.setVisibility(View.INVISIBLE);
+                            popupRecommend.setAnimation(alp);
+                            popupRecommend.setVisibility(View.INVISIBLE);
 
 
                         }

@@ -12,7 +12,6 @@ import android.widget.NumberPicker;
 import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -154,7 +153,7 @@ public class PushFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Toast.makeText(context, "shabi", Toast.LENGTH_SHORT).show();
+
 
     }
 
